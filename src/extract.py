@@ -5,7 +5,7 @@ import dotenv
 
 dotenv.load_dotenv()
 
-
+# !!!!!!!!!!!!!! SE VUOI PIU EVENTI DEVI TOCCARE IL PARAMETRO "size" DELLA QUERY !!!!!!!!!!!!!!
 
 # -- VARIABILI --
 host = os.getenv('host')
