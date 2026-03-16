@@ -1,0 +1,15 @@
+# dati reali mai su git
+data/*.json
+data/*.csv
+
+# virtual environment
+.venv/
+
+# jupyter checkpoints
+.ipynb_checkpoints/
+
+# output generati
+output/
+
+# variabili d'ambiente (credenziali)
+.env

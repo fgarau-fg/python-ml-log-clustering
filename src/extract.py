@@ -1,12 +1,18 @@
 import requests
 import json
 import os 
+import dotenv
+
+dotenv.load_dotenv()
+
+
 
 # -- VARIABILI --
-host = 'https://192.168.141.24:9200/wazuh-alerts-*/_search'
-user = 'admin'
-password = 'Qted*0zk9Cvfnv0vWnSi20OCvjRnQ9G4'
+host = os.getenv('host')
 
+user = os.getenv('user')
+password = os.getenv('pwd')
+print(host, user, password)
 # -- query --
 
 query = {
@@ -26,7 +32,9 @@ query = {
 auth = requests.post(url=host, auth=(user, password), json=query, verify=False)
 # print(auth.json())
 # salvo in un file 
-with open ('alerts.json', 'w') as f:
+print(os.getcwd())
+os.makedirs('./data', exist_ok=True)
+with open ('./data/alerts.json', 'w') as f:
     json.dump(auth.json(), f, indent=4)
 
 print("File 'alerts.json' creato con successo.")
